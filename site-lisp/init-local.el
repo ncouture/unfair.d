@@ -6,5 +6,6 @@
 
 (add-to-list 'load-path (expand-file-name "user-lisp" user-emacs-directory))
 
+
 (provide 'init-local)
-;;; init-local ends here.(add-to-list 'load-path (expand-file-name "user-lisp" user-emacs-directory))
+;;; init-local ends here.
