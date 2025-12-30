@@ -1,3 +1,7 @@
-This is a place for 3rd party code which isn't available in MELPA or
-other package repositories. This directory and its immediate subdirectories
-will be added to load-path at start-up time.
+This where you configure init-local.el to load your own "init-packages.el".
+
+Unless you want to pull from my upstream and run in conflicts the preferred way to customize this configuration is to load your "init-packages.el" from the local ./init-local.el which will be loaded at the very end of init.el.
+
+I recommend you follow the init-local.el configuration and begin making your customizations in user-lisp/init-<userpkg>.el then simply adding (require 'init-<userpkg>.el in init-local.el inside this directory.
+
+Please, do submit any improvement you feel can benefit any used of this configuration including myself, as big or small a change it is.
