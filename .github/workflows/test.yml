@@ -10,11 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      matrix:
+        emacs_version:
+          - 30.1
+        experimental: [true]
+        include:
+          - emacs_version: snapshot
+            experimental: true
     steps:
-    - uses: purcell/setup-emacs@master
+    - uses: purcell/setup-emacs@master # runs ``test-startup.sh'' across 
       with:
-        version: '30.1'
-
-    - uses: actions/checkout@v6
-    - name: Check startup
-      run: ./test-startup.sh
+        version: ${{ matrix.emacs_version }}
