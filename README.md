@@ -59,9 +59,9 @@ To add your own tools, languages, or personal tweaks:
 3.  Any file matching the pattern `init-*.el` in `user-lisp/` will be **automatically loaded** by `site-lisp/init-local.el` at the very end of `init.el`'s execution.
 
 ### Important: Avoid editing files in `lisp/` and `site-lisp/`
-While Emacs allows creating a personal `init-local.el`, we strongly recommend **avoiding this**.
+While Emacs allows personal `init` files, you should **not replace the existing contents of `site-lisp/init-local.el`** in this configuration.
 - Custom libraries in `user-lisp/` provide better organization.
-- Overwriting `init-local.el` may disable the automatic loading of your `user-lisp/` modules.
+- When editing `site-lisp/init-local.el`, **append your customizations after the existing auto-loading block for `user-lisp/` modules** (as indicated by the comment in that file) instead of overwriting or removing it; doing so would disable the automatic loading of your `user-lisp/` modules.
 - If you cannot achieve a specific customization via `user-lisp/`, please **open an issue** tagged as a bug so we can assist you.
 
 Pull requests are always welcome!
