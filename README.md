@@ -11,6 +11,7 @@
 1.  **AI-First Workflow**: Built-in support for Model Context Protocol (MCP), Gemini, OpenAI, and Anthropic via `gptel` and custom AI modules.
 2.  **Modular by Design**: Every feature is a self-contained module in `lisp/`. Disable or add new functionality without touching the core logic.
 3.  **Modern Defaults**: Fast, pretty, and productive. Uses `vertico`, `corfu`, `eglot`, and `treesitter` for a cutting-edge experience.
+4.  **Org-Mode Powered**: Leverage the most powerful system for organization and documentation, pre-configured for productivity.
 
 ---
 
@@ -36,6 +37,7 @@ Inheriting the strengths of Steve Purcell's config, **Unfair.d** provides except
     *   `Eglot`: Lightweight, built-in LSP client.
     *   `Vertico/Consult/Corfu`: A modern, responsive completion stack.
 
+
 ---
 
 ## 🏗 Modular Extensibility
@@ -45,7 +47,7 @@ Adding your own logic is easy. **Unfair.d** is built to be extended:
 ### 1. The Easy Way (init-local.el)
 Create `~/.emacs.d/lisp/init-local.el`. Anything in this file will be loaded last.
 ```el
-;; Add your personal tweaks here
+;; Load your personal libraries (stored in [user-lisp](./user-lisp/)) here
 (setq-default display-line-numbers-type 'relative)
 (provide 'init-local)
 ```
