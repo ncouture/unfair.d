@@ -1,4 +1,12 @@
-# Unfair.d: A Modular Emacs Configuration for the AI Era
+# Unfair.d: The Remarkable Edge
+
+The status quo loves "fair." It loves the middle of the curve. But in a world that rewards the remarkable, the middle is a dangerous place to be.
+
+**Unfair.d** is for the creators who realize that the most "fair" thing you can do is give your craft the best possible leverage. We’ve taken the legendary, battle-tested foundation of the Purcell configuration and supercharged it with the exponential power of deep AI integration. It’s modular, it’s high-performance, and it’s designed for those who refuse to settle.
+
+It’s an unfair advantage, built for a world that demands you ship work that matters for people who care. 
+
+Don't just code. Lead.
 
 [![CI](https://github.com/ncouture/unfair.d/actions/workflows/test.yml/badge.svg)](https://github.com/ncouture/unfair.d/actions)
 
@@ -11,7 +19,7 @@
 1.  **AI-First Workflow**: Built-in support for Model Context Protocol (MCP), Gemini, OpenAI, and Anthropic via `gptel` and custom AI modules.
 2.  **Modular by Design**: Every feature is a self-contained module in `lisp/`. Disable or add new functionality without touching the core logic.
 3.  **Modern Defaults**: Fast, pretty, and productive. Uses `vertico`, `corfu`, `eglot`, and `treesitter` for a cutting-edge experience.
-4.  **Org-Mode Powered**: Leverage the most powerful system for organization and documentation, pre-configured for productivity.
+4.  **Org-Mode Powered**: Leverage an other-wordly organization level using nothing else but the legendary org workflow config of Bern Hanson that comes with a beautiful document that describes every configuration, customization, as well as ([the description of the workflow](https://doc.norang.ca/org-mode.html)) that can be achieved by relying on this truly exceptional organizational how the entirety of these preferences and customizations  configuration of Bernt Hanson forked and slightly edited to run in Emacs 30.1.
 
 ---
 
@@ -46,11 +54,11 @@ Inheriting the strengths of Steve Purcell's config, **Unfair.d** provides except
 
 ### The Recommended Way: `user-lisp/`
 To add your own tools, languages, or personal tweaks:
-1.  Create a file in the `user-lisp/` directory (e.g., `user-lisp/init-my-config.el`).
-2.  Add your configuration and ensure it ends with `(provide 'init-my-config)`.
-3.  Any file matching the pattern `init-*.el` in `user-lisp/` will be **automatically loaded** by `site-lisp/init-local.el` after the main configuration.
+1.  Create a file in the `user-lisp/` directory (e.g., `user-lisp/init-<library-name>.el`).
+2.  Add your configuration and ensure it ends with `(provide 'init-<library-name.el>)`.
+3.  Any file matching the pattern `init-*.el` in `user-lisp/` will be **automatically loaded** by `site-lisp/init-local.el` at the very end of `init.el`'s execution.
 
-### Important: Avoid `init-local.el`
+### Important: Avoid editing files in `lisp/` and `site-lisp/`
 While Emacs allows creating a personal `init-local.el`, we strongly recommend **avoiding this**.
 - Custom libraries in `user-lisp/` provide better organization.
 - Overwriting `init-local.el` may disable the automatic loading of your `user-lisp/` modules.
