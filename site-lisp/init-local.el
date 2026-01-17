@@ -8,7 +8,11 @@
   (add-to-list 'load-path user-lisp-dir)
   (when (file-directory-p user-lisp-dir)
     (dolist (file (directory-files user-lisp-dir nil "^init-.*\\.el$"))
-      (require (intern (file-name-sans-extension file))))))
+      (condition-case err
+          (require (intern (file-name-sans-extension file)))
+        (error
+         (message "Error loading user init file %s: %S"
+                  file err))))))
 
 ;; Add your personal tweaks here
 
