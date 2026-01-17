@@ -1,125 +1,106 @@
-[![Build Status](https://github.com/purcell/emacs.d/workflows/CI/badge.svg)](https://github.com/purcell/emacs.d/actions)
-<a href="https://www.patreon.com/sanityinc"><img alt="Support me" src="https://img.shields.io/badge/Support%20Me-%F0%9F%92%97-ff69b4.svg"></a>
+# Unfair.d: The Remarkable Edge
 
-# A reasonable Emacs config
+The status quo loves "fair." It loves the middle of the curve. But in a world that rewards the remarkable, the middle is a dangerous place to be.
 
-This is my emacs configuration tree, continually used and tweaked
-since 2000, and it may be a good starting point for other Emacs
-users, especially web developers. These days it's
-somewhat geared towards OS X, but it is known to also work on Linux
-and Windows.
+**Unfair.d** is for the creators who realize that the most "fair" thing you can do is give your craft the best possible leverage. We’ve taken the legendary, battle-tested foundation of the Purcell configuration and supercharged it with the exponential power of deep AI integration. It’s modular, it’s high-performance, and it’s designed for those who refuse to settle.
 
-Emacs itself comes with support for many programming languages. This
-config adds improved defaults and extended support for the following, listed
-in the approximate order of how much I use them, from most to least:
+It’s an unfair advantage, built for a world that demands you ship work that matters for people who care. 
 
-* Haskell / Purescript / Elm / OCaml
-* Ruby / Ruby on Rails
-* SQL
-* CSS / LESS / SASS / SCSS
-* Javascript / Typescript
-* HTML / HAML / Markdown / Textile / ERB
-* Common Lisp (with Slime)
-* Python
-* Rust
-* Clojure (with Cider and nRepl)
-* PHP
-* Erlang
+Don't just code. Lead.
 
-Included is a nice setup for in-buffer autocompletion with
-[corfu](https://github.com/minad/corfu), and minibuffer completion using
-[vertico](https://github.com/minad/vertico).
+[![CI](https://github.com/ncouture/unfair.d/actions/workflows/test.yml/badge.svg)](https://github.com/ncouture/unfair.d/actions)
 
-`flymake` (re-using backends from [flycheck](http://www.flycheck.org))
-is used to immediately highlight syntax errors in Ruby, Python,
-Javascript, Haskell and a number of other languages.
+**Unfair.d** is a high-performance, modular Emacs configuration designed for modern developers who want a "fair advantage." Forked from the legendary configuration by [Steve Purcell (@SanityInc)](https://github.com/purcell/emacs.d), this setup maintains its battle-tested stability while pivoting toward **deep AI integration** and **modular extensibility**.
 
-LSP support is provided using `eglot`.
+---
 
-Various popular Emacs tools are included and configured here, such as
-`magit`, `docker.el`, `projectile`, `org-mode` etc., but the focus is moderate
+## 🚀 Key Philosophy
 
-## Supported Emacs versions
+1.  **AI-First Workflow**: Built-in support for Model Context Protocol (MCP), Gemini, OpenAI, and Anthropic via `gptel` and custom AI modules.
+2.  **Modular by Design**: Every feature is a self-contained module in `lisp/`. Disable or add new functionality without touching the core logic.
+3.  **Modern Defaults**: Fast, pretty, and productive. Uses `vertico`, `corfu`, `eglot`, and `treesitter` for a cutting-edge experience.
+4.  **Org-Mode Powered**: Leverage an other-wordly organization level using nothing else but the legendary org workflow config of Bern Hanson that comes with a beautiful document that describes every configuration, customization, as well as ([the description of the workflow](https://doc.norang.ca/org-mode.html)) that can be achieved by relying on this truly exceptional organizational how the entirety of these preferences and customizations  configuration of Bernt Hanson forked and slightly edited to run in Emacs 30.1.
 
-Use the latest released Emacs version available to you. The author
-typically uses the latest stable version.
+---
 
-The config should run on Emacs 27.1 or greater and is designed to
-degrade smoothly - see the CI build - but many enhancements may be
-unavailable if your Emacs is too old, and in general you should try
-to use the latest stable Emacs release like I do.
+## 🧠 AI Integration
 
-## Other requirements
+This configuration is optimized for AI-assisted coding and exploration:
+- **`gptel` Support**: Seamless interaction with LLMs directly within Emacs buffers.
+- **MCP (Model Context Protocol)**: Support for MCP servers to give your LLMs access to tools and your local filesystem.
+- **Multi-Backend**: Pre-configured for Google Gemini, OpenAI, and Anthropic (just add your API keys).
 
-To make the most of the programming language-specific support in this
-config, further programs will likely be required, particularly those
-that flycheck or flymake use to provide on-the-fly syntax checking.
+---
 
-## Installation
+## 🛠 Features & Languages
 
-To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
-`init.el` contained in this repo ends up at `~/.emacs.d/init.el`:
+Inheriting the strengths of Steve Purcell's config, **Unfair.d** provides exceptional support for:
 
-```
-git clone https://github.com/purcell/emacs.d.git ~/.emacs.d
-```
-
-Upon starting up Emacs for the first time, further third-party
-packages will be automatically downloaded and installed. If you
-encounter any errors at that stage, try restarting Emacs, and possibly
-running `M-x package-refresh-contents` before doing so.
+*   **Languages**: Haskell, Ruby, Typescript/Javascript, Rust, Python, Clojure, Go, and more.
+*   **Web**: HTML/CSS (SCSS/LESS), HAML, Markdown, YAML, JSON.
+*   **Tools**:
+    *   `Magit`: The best Git interface ever made.
+    *   `Dired`: Enhanced directory management.
+    *   `Projectile`: Quick project-wide navigation.
+    *   `Eglot`: Lightweight, built-in LSP client.
+    *   `Vertico/Consult/Corfu`: A modern, responsive completion stack.
 
 
-## Updates
+---
 
-Update the config with `git pull`. You'll probably also want/need to
-update the third-party packages regularly too, because that's what I
-do, and the config assumes it:
+## 🏗 Modular Extensibility
 
-<kbd>M-x package-list-packages</kbd>, then <kbd>U</kbd> followed by <kbd>x</kbd>.
+**Unfair.d** is built to be extended without touching core files in `lisp/`.
 
-You should usually restart Emacs after pulling changes or updating
-packages so that they can take effect. Emacs should usually restore
-your working buffers when you restart due to this configuration's use
-of the `desktop` and `session` packages.
+### The Recommended Way: `user-lisp/`
+To add your own tools, languages, or personal tweaks:
+1.  Create a file in the `user-lisp/` directory (e.g., `user-lisp/init-<library-name>.el`).
+2.  Add your configuration and ensure it ends with `(provide 'init-<library-name.el>)`.
+3.  Any file matching the pattern `init-*.el` in `user-lisp/` will be **automatically loaded** by `site-lisp/init-local.el` at the very end of `init.el`'s execution.
 
-## Changing themes and adding your own customization
+### Important: Avoid editing files in `lisp/` and `site-lisp/`
+While Emacs allows personal `init` files, you should **not replace the existing contents of `site-lisp/init-local.el`** in this configuration.
+- Custom libraries in `user-lisp/` provide better organization.
+- When editing `site-lisp/init-local.el`, **append your customizations after the existing auto-loading block for `user-lisp/` modules** (as indicated by the comment in that file) instead of overwriting or removing it; doing so would disable the automatic loading of your `user-lisp/` modules.
+- If you cannot achieve a specific customization via `user-lisp/`, please **open an issue** tagged as a bug so we can assist you.
 
-To add your own customization, use <kbd>M-x customize</kbd>, <kbd>M-x
-customize-themes</kbd> etc. and/or create a file
-`~/.emacs.d/lisp/init-local.el` which looks like this:
+Pull requests are always welcome!
 
-```el
-... your code here ...
+---
 
-(provide 'init-local)
-```
+## 📥 Installation
 
-If you need initialisation code which executes earlier in the startup process,
-you can also create an `~/.emacs.d/lisp/init-preload-local.el` file.
+1.  **Backup your old config**:
+    ```bash
+    mv ~/.emacs.d ~/.emacs.d.bak
+    ```
+2.  **Clone Unfair.d**:
+    ```bash
+    git clone https://github.com/ncouture/unfair.d.git ~/.emacs.d
+    ```
+3.  **Launch Emacs**:
+    Packages will be automatically downloaded and installed on the first run.
 
-If you plan to customize things more extensively, you should probably
-just fork the repo and hack away at the config to make it your own!
-Remember to regularly merge in changes from this repo, so that your
-config remains compatible with the latest package and Emacs versions.
+### API Keys for AI
+For full AI functionality, place your keys in the following files (or customize `lisp/init-gptel.el`):
+- `~/.ssh/apiKeys/gemini.key`
+- `~/.ssh/apiKeys/openai.key`
+- `~/.ssh/apiKeys/anthropic.key`
 
-*Please note that I cannot provide support for customised versions of
-this configuration.*
+---
 
-## Support / issues
+## 🔄 Updates
 
-If you hit any problems, please first ensure that you are using the latest version
-of this code, and that you have updated your packages to the most recent available
-versions (see "Updates" above). If you still experience problems, go ahead and
-[file an issue on the github project](https://github.com/purcell/emacs.d).
+Stay up to date with `git pull`. To update packages:
+1. `M-x package-list-packages`
+2. Press `U`, then `x`.
 
--Steve Purcell
+---
 
-<hr>
+## 🙏 Credits
 
+This project is a fork of [Steve Purcell's emacs.d](https://github.com/purcell/emacs.d). We owe a massive debt of gratitude to Steve for his 20+ years of maintenance and excellent architectural decisions that made this modular fork possible.
 
-[💝 Support this project and my other Open Source work](https://www.patreon.com/sanityinc)
+---
 
-[💼 LinkedIn profile](https://uk.linkedin.com/in/stevepurcell)
-
-[✍ sanityinc.com](http://www.sanityinc.com/)
+*Hacked with ❤️ by Nicolas Couture and contributors.*
