@@ -189,12 +189,6 @@
 (require 'init-locales)
 
 ;; Allow users to provide an optional "init-local" containing personal settings
-(let ((user-lisp-dir (expand-file-name "user-lisp" user-emacs-directory)))
-  (add-to-list 'load-path user-lisp-dir)
-  (when (file-directory-p user-lisp-dir)
-    (dolist (file (directory-files user-lisp-dir nil "^init-.*\\.el$"))
-      (require (intern (file-name-sans-extension file))))))
-
 (require 'init-local nil t)
 
 (provide 'init)

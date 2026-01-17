@@ -42,21 +42,21 @@ Inheriting the strengths of Steve Purcell's config, **Unfair.d** provides except
 
 ## 🏗 Modular Extensibility
 
-Adding your own logic is easy. **Unfair.d** is built to be extended:
+**Unfair.d** is built to be extended without touching core files in `lisp/`.
 
-### 1. The Easy Way (init-local.el)
-Create `~/.emacs.d/lisp/init-local.el`. Anything in this file will be loaded last.
-```el
-;; Load your personal libraries (stored in [user-lisp](./user-lisp/)) here
-(setq-default display-line-numbers-type 'relative)
-(provide 'init-local)
-```
+### The Recommended Way: `user-lisp/`
+To add your own tools, languages, or personal tweaks:
+1.  Create a file in the `user-lisp/` directory (e.g., `user-lisp/init-my-config.el`).
+2.  Add your configuration and ensure it ends with `(provide 'init-my-config)`.
+3.  Any file matching the pattern `init-*.el` in `user-lisp/` will be **automatically loaded** by `site-lisp/init-local.el` after the main configuration.
 
-### 2. The Modular Way
-Want to add a new tool or language?
-1. Create `lisp/init-my-cool-feature.el`.
-2. Add your config and `(provide 'init-my-cool-feature)`.
-3. Add `(require 'init-my-cool-feature)` to your `init-local.el` or fork and add it to `init.el`.
+### Important: Avoid `init-local.el`
+While Emacs allows creating a personal `init-local.el`, we strongly recommend **avoiding this**.
+- Custom libraries in `user-lisp/` provide better organization.
+- Overwriting `init-local.el` may disable the automatic loading of your `user-lisp/` modules.
+- If you cannot achieve a specific customization via `user-lisp/`, please **open an issue** tagged as a bug so we can assist you.
+
+Pull requests are always welcome!
 
 ---
 
