@@ -19,7 +19,7 @@ Don't just code. Lead.
 1.  **AI-First Workflow**: Built-in support for Model Context Protocol (MCP), Gemini, OpenAI, and Anthropic via `gptel` and custom AI modules.
 2.  **Modular by Design**: Every feature is a self-contained module in `lisp/`. Disable or add new functionality without touching the core logic.
 3.  **Modern Defaults**: Fast, pretty, and productive. Uses `vertico`, `corfu`, `eglot`, and `treesitter` for a cutting-edge experience.
-4.  **Org-Mode Powered**: Leverage an other-wordly organization level using nothing else but the legendary org workflow config of Bern Hanson that comes with a beautiful document that describes every configuration, customization, as well as ([the description of the workflow](https://doc.norang.ca/org-mode.html)) that can be achieved by relying on this truly exceptional organizational how the entirety of these preferences and customizations  configuration of Bernt Hanson forked and slightly edited to run in Emacs 30.1.
+4.  **Org-Mode Powered**: Leverage an other-worldly level of organization with the legendary org workflow configuration by Bernt Hansen. It comes with a beautiful document describing every configuration, customization, and [the workflow itself](https://doc.norang.ca/org-mode.html). This version is a fork, slightly edited to run on Emacs 30.1.
 
 ---
 
