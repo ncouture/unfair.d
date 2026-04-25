@@ -58,3 +58,6 @@ site-lisp/package/
 /projects
 /forge-*.sqlite
 /projectile.cache
+
+.gemini/
+gha-creds-*.json

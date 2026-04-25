@@ -384,14 +384,6 @@ typical word processor."
 (require-package 'bbdb)
 (require 'bbdb)
 
-;; The following setting is different from the document so that you
-;; can override the document path by setting your path in the variable
-;; org-mode-user-lisp-path
-;;
-(if (boundp 'org-mode-user-lisp-path)
-    (add-to-list 'load-path org-mode-user-lisp-path)
-  (add-to-list 'load-path (expand-file-name "~/git/org-mode/lisp")))
-
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (require 'org)
 ;;
@@ -1913,15 +1905,6 @@ Late deadlines first, then scheduled, then non-late deadlines"
 ;; Use sticky agenda's so they persist
 (setq org-agenda-sticky t)
 
-;; The following setting is different from the document so that you
-;; can override the document path by setting your path in the variable
-;; org-mode-user-contrib-lisp-path
-;;
-(if (boundp 'org-mode-user-contrib-lisp-path)
-    (add-to-list 'load-path org-mode-user-contrib-lisp-path)
-  (add-to-list 'load-path (expand-file-name "~/git/org-mode/contrib/lisp")))
-
-
 (setq org-enforce-todo-dependencies t)
 
 (setq org-hide-leading-stars nil)
@@ -2133,7 +2116,6 @@ Late deadlines first, then scheduled, then non-late deadlines"
 
 (setq org-link-mailto-program (quote (compose-mail "%a" "%s")))
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (require-package 'smex)
 (require 'smex)
 (smex-initialize)
