@@ -55,7 +55,7 @@ Inheriting the strengths of Steve Purcell's config, **Unfair.d** provides except
 ### The Recommended Way: `user-lisp/`
 To add your own tools, languages, or personal tweaks:
 1.  Create a file in the `user-lisp/` directory (e.g., `user-lisp/init-<library-name>.el`).
-2.  Add your configuration and ensure it ends with `(provide 'init-<library-name.el>)`.
+2.  Add your configuration and ensure it ends with `(provide 'init-<library-name>)`.
 3.  Any file matching the pattern `init-*.el` in `user-lisp/` will be **automatically loaded** by `site-lisp/init-local.el` at the very end of `init.el`'s execution.
 
 ### Important: Avoid editing files in `lisp/` and `site-lisp/`
